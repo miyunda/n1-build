@@ -12,9 +12,9 @@ jobs:
         path: './phicomm-n1'
 
         
-    - name: Moving build to artifacts directory
+    - name: Start to build
       run: |             
            cd phicomm-n1
            ls -a
            # chmod +x ./compile.sh
-           # ./compile.sh BOARD=arm-64 BRANCH=current RELEASE=bullseye BUILD_MINIMAL=no BUILD_DESKTOP=no KERNEL_ONLY=no KERNEL_CONFIGURE=no COMPRESS_OUTPUTIMAGE=sha,img
+           ./compile.sh BOARD=arm-64 BRANCH=current RELEASE=bullseye BUILD_MINIMAL=no BUILD_DESKTOP=no KERNEL_ONLY=no KERNEL_CONFIGURE=no COMPRESS_OUTPUTIMAGE=sha,img
