@@ -1,0 +1,9 @@
+name: N1 Armbian Build Test.
+on: [push]
+jobs:
+  Explore-GitHub-Actions:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get source code from daai lou
+      - run: git clone --depth 1 https://github.com/yunsur/phicomm-n1.git
+      - run: cd phicomm-n1
