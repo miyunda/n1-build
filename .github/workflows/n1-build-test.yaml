@@ -4,6 +4,7 @@ jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
     steps:
-      # name: Get source code from daai lou
+      # Get source code from daai lou
       - run: git clone --depth 1 https://github.com/yunsur/phicomm-n1.git
       - run: cd phicomm-n1
+      - run: ./compile.sh BOARD=arm-64 BRANCH=current RELEASE=bullseye BUILD_MINIMAL=no BUILD_DESKTOP=no KERNEL_ONLY=no KERNEL_CONFIGURE=no COMPRESS_OUTPUTIMAGE=sha,img
