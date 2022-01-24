@@ -4,8 +4,11 @@ jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
     steps:
-      # Get source code from daai lou
-      - run: git clone --depth 1 https://github.com/yunsur/phicomm-n1.git
-      - run: cd phicomm-n1
-      - run: ls -aR
-      #- run: ./compile.sh BOARD=arm-64 BRANCH=current RELEASE=bullseye BUILD_MINIMAL=no BUILD_DESKTOP=no KERNEL_ONLY=no KERNEL_CONFIGURE=no COMPRESS_OUTPUTIMAGE=sha,img
+      - name: source code from daai lou
+        run: |
+             git clone --depth 1 https://github.com/yunsur/phicomm-n1.git
+             cd phicomm-n1
+      - name: Moving build to artifacts directory
+        run: | 
+             chmod +x ./compile.sh
+             ./compile.sh BOARD=arm-64 BRANCH=current RELEASE=bullseye BUILD_MINIMAL=no BUILD_DESKTOP=no KERNEL_ONLY=no KERNEL_CONFIGURE=no COMPRESS_OUTPUTIMAGE=sha,img
