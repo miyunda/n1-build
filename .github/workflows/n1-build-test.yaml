@@ -1,7 +1,7 @@
 name: N1 Armian Build Test.
 on: [push]
 jobs:
-  TestRun:
+  Build:
     runs-on: ubuntu-latest
     
     steps:
@@ -15,6 +15,10 @@ jobs:
     - name: Start to build
       run: |             
            cd phicomm-n1
-           ls -a
-           # chmod +x ./compile.sh
            ./compile.sh BOARD=arm-64 BRANCH=current RELEASE=bullseye BUILD_MINIMAL=no BUILD_DESKTOP=no KERNEL_ONLY=no KERNEL_CONFIGURE=no DOWNLOAD_MIRROR=official MAINLINE_MIRROR=official UBOOT_MIRROR=official GITHUB_MIRROR=official COMPRESS_OUTPUTIMAGE=sha,xz
+   
+    - name: Upload
+    - uses: actions/upload-artifact@v2
+      with:
+        name: my-artifact
+        path: .tmp # or path/to/artifact
