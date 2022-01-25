@@ -8,7 +8,7 @@ jobs:
     - name: Checkout source code from daai lou
       uses: actions/checkout@v2
       with:
-        repository: miyunda/phicomm-n1
+        repository: yunsur/phicomm-n1
         path: './phicomm-n1'
 
         
